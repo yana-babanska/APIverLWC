@@ -4,6 +4,5 @@ public with sharing class SalesDataController {
         List<AggregateResult> retorno = new List<AggregateResult>();
         retorno = [SELECT SUM(Amount) TOTAL, CALENDAR_MONTH(CloseDate) month FROM Opportunity WHERE CloseDate = NULL GROUP BY CALENDAR_MONTH(CloseDate)];
         return retorno;
-///
     }
 }
